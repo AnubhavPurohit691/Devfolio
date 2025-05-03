@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --success: #16a34a;
+  --warning: #eab308;
+  --error: #ef4444;
+  --border: #e5e7eb;
+  --input: #f3f4f6;
+  --ring: rgba(79, 70, 229, 0.5);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #6366f1;
+    --primary-hover: #818cf8;
+    --secondary: #10b981;
+    --secondary-hover: #34d399;
+    --accent: #f97316;
+    --accent-hover: #fb923c;
+    --success: #22c55e;
+    --warning: #facc15;
+    --error: #f87171;
+    --border: #262626;
+    --input: #1f1f1f;
+    --ring: rgba(99, 102, 241, 0.5);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: var(--background);
+  border: 1px solid var(--border);
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+}

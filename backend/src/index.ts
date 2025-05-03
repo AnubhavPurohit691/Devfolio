@@ -7,7 +7,7 @@ import { basePrompt } from "./Baseprompt";
 import { chatHandler } from "./controllers/chat";
 import { getAccessToken } from "./controllers/getAccessToken";
 import { getRepo } from "./controllers/getRepo";
-import { GROQ_API_KEY } from "./config/config";
+import { GROQ_API_KEY, PORT } from "./config/config";
 const app = express ()
 dotenv.config()
 app.use(express.json())
@@ -64,6 +64,6 @@ app.get('/getaccesstoken',getAccessToken);
 
 app.get("/getrepo",getRepo);
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
   console.log("Server is running on port 3000")
 })
